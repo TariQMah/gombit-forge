@@ -12,7 +12,7 @@ import (
 // storage name is "constructor" must be wired like any other filter, and the
 // filters map must stay prototype-free. A plain {} reads
 // Object.prototype.constructor as the filter value, so the table sends the
-// function's source on first load and comes up empty (gombit #305).
+// function's source on first load and comes up empty (#305).
 func TestFrontendTableFiltersConstructorStorageName(t *testing.T) {
 	id := func(k spec.Kind) spec.ID { return spec.MustNewID(k) }
 	res := id(spec.KindResource)
