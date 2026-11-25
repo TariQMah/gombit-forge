@@ -242,7 +242,7 @@ export function {{.Component}}() {
   const [ordering, setOrdering] = useState("");
 {{- end}}
 {{- if .Filters}}
-    // Null prototype: a "constructor" filter must not resolve to Object.prototype.constructor (gombit #305).
+  // Null prototype: a "constructor" filter must not resolve to Object.prototype.constructor (#305).
   const [filters, setFilters] = useState<Record<string, string>>(Object.create(null));
 {{- end}}
   const [status, setStatus] = useState({{js (printf "Loading %s…" .Title)}});
